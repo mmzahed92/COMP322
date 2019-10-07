@@ -22,3 +22,11 @@ void pwd(){
 	
 	printf( "\nThe current working directory is: %s \n", temp );
 }
+
+/*********************************************************/
+
+// Method to print any extra arguments
+void echo( char str[300] ){
+	
+	printf( "\n%s", str );
+}
