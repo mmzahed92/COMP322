@@ -113,5 +113,85 @@ int main(){
 				j++;
 			}
 		}
+		
+				for( i = 0; i < counter; i++ ){
+			
+			for( j = 0; j <= (strlen(stringArr[i])); j++ ){
+				
+				// If the character matches the 'p' in pwd...
+				if( stringArr[i][j] == pwdStr[j] ){
+					
+					//... Then pwdCounter++ and check the next character
+					//		on the next loop
+					pwdCounter++;
+					
+				} else if( stringArr[i][j] == echoStr[j] ){
+					
+					echoCounter++;
+					
+				} else if( stringArr[i][j] == lsStr[j] ){
+					
+					lsCounter++;
+					
+				} else if( stringArr[i][j] == helpStr[j] ){
+					
+					helpCounter++;
+					
+				} else if( stringArr[i][j] == exitStr[j] ){
+					
+					exitCounter++;
+					
+					// If the letter doesn't start with and/or contain any of the valid characters...
+				} else if( pwdBool == 0 && echoBool == 0 && lsBool == 0 && helpBool == 0 ){
+					
+					invalidCounter++; // ... Then it is an invalid command
+				}
+				
+				// If the characters entered match pwd
+				// then we call pwd() and print the working directory
+				if( pwdCounter >= 3 ){
+					
+					pwd();
+					pwdBool = 1;
+					pwdCounter = 0;
+					
+				} else if( echoCounter >= 4 ){
+					
+					printf("%s\n",stringArr[i+1]);
+					echoBool = 1;
+					echoCounter = 0;
+					
+				} else if( lsCounter >= 2 ){
+					
+					ls();
+					lsBool = 1;
+					lsCounter = 0;
+					
+				} else if( helpCounter >= 4 ){
+					
+					helpList();
+					helpBool = 1;
+					helpCounter = 0;
+					
+				} else if( exitCounter > 0 ){
+					
+					//exitCounter = 0;
+					break;
+				}
+			}
+		}
+		
+		// If the invalidCounter != then it must be an invalid command
+		if(invalidCounter != 0){
+			
+			printf("\nInvalid command. Please try again or type 'help' for the list of commands: ");
+			invalidCounter = 0;
+		}
+			
 	}
+	
+	// This is for when the user types 'exit'
+	printf("\nProgram has terminated.\n");
+	
+    return 0;
 }
