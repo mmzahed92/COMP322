@@ -30,3 +30,26 @@ void echo( char str[300] ){
 	
 	printf( "\n%s", str );
 }
+
+/*********************************************************/
+
+// Method to print all folders and files in a working directory
+void ls(){
+	
+	DIR *temp;
+    struct dirent *dir;
+	
+    temp = opendir( "." );
+	
+	printf("\n Listing all folders and files in the current directory: \n");
+	
+    if ( temp ){
+		
+        while ( ( dir = readdir( temp ) ) != NULL ){
+			
+            printf("%s\n", dir -> d_name);
+        }
+		
+        closedir( temp );
+    }
+}
