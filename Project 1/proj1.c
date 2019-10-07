@@ -53,3 +53,17 @@ void ls(){
         closedir( temp );
     }
 }
+
+/*********************************************************/
+
+// Method printed when user types 'help'
+void helpList(){
+	
+	printf( "\nList of commands available in this program: " );
+	printf( "\n pwd - Displays the current working directory. Does not accept arguments." );
+	printf( "\n echo - Displays any extra arguments to screen. Accepts arguments." );
+	printf( "\n ls - Displays all files and folders in the current directory." );
+	printf( "\n 	 Arguments not needed." );
+	printf( "\n help - Displays a list of all commands available in this program." );
+	printf( "\n exit - Quits the program. \n" );
+}
