@@ -67,3 +67,28 @@ void helpList(){
 	printf( "\n help - Displays a list of all commands available in this program." );
 	printf( "\n exit - Quits the program. \n" );
 }
+
+/*********************************************************/
+
+int main(){
+	
+	
+	char str[200];
+    char stringArr[100][100]; // This can store 100 words, each 100 characters long
+	
+	// These 5 char arrays
+	// are used to compare strings the user enters
+	char pwdStr[3] = { 'p', 'w', 'd' };
+	char echoStr[4] = {'e', 'c', 'h', 'o'};
+	char lsStr[2] = { 'l', 's' };
+	char helpStr[4] = {'h', 'e', 'l', 'p'};
+	char exitStr[4] = {'e', 'x', 'i', 't'};
+	int i, j, counter;
+	int pwdCounter, echoCounter, lsCounter;
+	int helpCounter, exitCounter, invalidCounter;
+	_Bool pwdBool, echoBool, lsBool, helpBool;
+	
+	pwdBool = echoBool = lsBool = helpBool = 0;
+	pwdCounter = echoCounter = lsCounter = 0;
+	helpCounter = exitCounter = invalidCounter = 0;
+}
