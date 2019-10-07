@@ -91,4 +91,27 @@ int main(){
 	pwdBool = echoBool = lsBool = helpBool = 0;
 	pwdCounter = echoCounter = lsCounter = 0;
 	helpCounter = exitCounter = invalidCounter = 0;
+	
+	while( exitCounter < 1 ){
+		
+		gets(str);
+	 
+		j = 0;
+		counter = 0;
+		
+		// Gets the length of the user's input
+		for( i = 0; i <=( strlen(str)); i++ ){
+			
+			if( str[i]==' '||str[i]=='\0' ){
+				
+				stringArr[counter][j]='\0';
+				counter++;  // Next word
+				j = 0;
+			} else {
+				
+				stringArr[counter][j]=str[i];
+				j++;
+			}
+		}
+	}
 }
